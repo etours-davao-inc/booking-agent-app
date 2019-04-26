@@ -1,0 +1,22 @@
+{
+  "name": "booking-agent-app",
+  "version": "1.0.0",
+  "description": "Booking Agent App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etours-davao-inc/booking-agent-app.git"
+  },
+  "keywords": [
+    "booking"
+  ],
+  "author": "Tom Claudio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etours-davao-inc/booking-agent-app/issues"
+  },
+  "homepage": "https://github.com/etours-davao-inc/booking-agent-app#readme"
+}

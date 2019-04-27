@@ -5,7 +5,7 @@ import ItineraryEditor from './ItineraryEditor';
 import { BookingProvider, BookingConsumer } from './context';
 import { FormField, FormSection } from './Styled';
 
-import InputDates from './InputDates';
+import GuestInfo from './GuestInfo';
 
 const FormStyle = styled.form`
   max-width: 1200px;
@@ -47,26 +47,7 @@ export default () => {
                   <input id="email" type="text" name="email" size={60} />
                 </FormField>
               </FormSection>
-              <FormSection>
-                <h2>Guest Information</h2>
-                <FormField>
-                  <label htmlFor="adults">Number of Adults: </label>
-                  <input id="adults" type="text" name="adults" size={3} />
-                </FormField>
-                <FormField>
-                  <label htmlFor="kid02">Number of kids(0-2): </label>
-                  <input id="kid02" type="text" name="kid02" size={3} />
-                </FormField>
-                <FormField>
-                  <label htmlFor="kid35">Number of kids(3-5): </label>
-                  <input id="kid35" type="text" name="kid35" size={3} />
-                </FormField>
-                <FormField>
-                  <label htmlFor="kid611">Number of kids 6-11: </label>
-                  <input id="kid611" type="text" name="kid611" size={3} />
-                </FormField>
-                <InputDates />
-              </FormSection>
+              <GuestInfo />
               <FormSection>
                 <h2>Accommmodation Info</h2>
                 <FormField>

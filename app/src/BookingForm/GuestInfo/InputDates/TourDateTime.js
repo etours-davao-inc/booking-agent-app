@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FormField } from '../Styled';
+import { FormField } from '../../Styled';
 
 import 'react-day-picker/lib/style.css';
 import DayPickerInput from 'react-day-picker/DayPickerInput';

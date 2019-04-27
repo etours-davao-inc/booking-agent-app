@@ -3,7 +3,7 @@ import React from 'react';
 import TourDateTime from './TourDateTime';
 import MultiDates from './MultiDates';
 
-import { BookingConsumer } from '../context';
+import { BookingConsumer } from '../../context';
 
 export default () => {
   return (

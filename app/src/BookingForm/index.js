@@ -157,7 +157,7 @@ export default props => (
       <FormSection id="guest-info">
         <h2>Itinerary</h2>
         <FormField>
-          <ItineraryBuilder />
+          <ItineraryEditor />
         </FormField>      
       </FormSection>
     </FormStyle>

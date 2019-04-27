@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import ItineraryEditor from './ItineraryEditor';
 
+import 'react-day-picker/lib/style.css';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+
 const FormStyle = styled.form`
   max-width: 1200px;
   margin: 0 auto;
@@ -75,23 +78,23 @@ export default props => (
         <FormField>
           <label htmlFor="">Arrival Date: </label>
           <fieldset className="pure-group">
-            <input id="from" type="text" name="from" />
+            <DayPickerInput />
             <input id="from_flight_no" type="text" name="from_flight_no" placeholder="Flight Number"/>
           </fieldset>
         </FormField>
         <FormField>
           <label htmlFor="">Departurn Date: </label>
           <fieldset className="pure-group">
-            <input id="to" type="text" name="to" />
+            <DayPickerInput />
             <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Flight Number"/>
           </fieldset>
         </FormField>
         <FormField>
           <label htmlFor="">Tour Date: </label>
           <fieldset className="pure-group">
-            <input id="tourdate" type="text" name="tourdate" />
-            <input id="from" type="text" name="from" placeholder="Start time"/>
-            <input id="to" type="text" name="to" placeholder="End time"/>
+            <DayPickerInput />
+            <input id="from" type="time" min="5:00" max="21:00" name="from" placeholder="Start time"/>
+            <input id="to" type="time" min="5:00" max="21:00" name="to" placeholder="End time"/>
           </fieldset>
         </FormField>        
       </FormSection>

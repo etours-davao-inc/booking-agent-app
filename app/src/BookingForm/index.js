@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import ItineraryEditor from './ItineraryEditor';
 
-import 'react-day-picker/lib/style.css';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-
 import { BookingProvider, BookingConsumer } from './context';
+import { FormField, FormSection } from './Styled';
+
+import InputDates from './InputDates';
 
 const FormStyle = styled.form`
   max-width: 1200px;
@@ -13,21 +13,6 @@ const FormStyle = styled.form`
   background-color: white;
   border-radius: 2px;
   padding: 1rem;
-`
-const FormField = styled.div`
-  display: flex;
-  align-items: center;
-  input, label {
-    color: #2f3542;
-  }
-  label {
-    width: 200px;
-  }
-  margin-bottom: 10px;
-`
-
-const FormSection = styled.section`
-padding: 10px; 
 `
 
 export default () => {
@@ -80,47 +65,7 @@ export default () => {
                   <label htmlFor="kid611">Number of kids 6-11: </label>
                   <input id="kid611" type="text" name="kid611" size={3} />
                 </FormField>
-                <FormField>
-                  <label htmlFor="">Arrival Date: </label>
-                  <fieldset className="pure-group">
-                    <DayPickerInput />
-                    <input id="from_flight_no" type="text" name="from_flight_no" placeholder="Flight Number" />
-                  </fieldset>
-                </FormField>
-                <FormField>
-                  <label htmlFor="">Departurn Date: </label>
-                  <fieldset className="pure-group">
-                    <DayPickerInput />
-                    <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Flight Number" />
-                  </fieldset>
-                </FormField>
-                <FormField>
-                  <label htmlFor="">Tour Date: </label>
-                  <fieldset className="pure-group">
-                    <DayPickerInput />
-                    <input id="from" list="time" placeholder="Start time" />
-                    <input id="to" list="time" name="to" placeholder="End time" />
-                    <datalist id="time">
-                      <option value="5:00 am" />
-                      <option value="6:00 am" />
-                      <option value="7:00 am" />
-                      <option value="8:00 am" />
-                      <option value="9:00 am" />
-                      <option value="10:00 am" />
-                      <option value="11:00 am" />
-                      <option value="12:00 pm" />
-                      <option value="1:00 pm" />
-                      <option value="2:00 pm" />
-                      <option value="3:00 pm" />
-                      <option value="4:00 pm" />
-                      <option value="5:00 pm" />
-                      <option value="6:00 pm" />
-                      <option value="7:00 pm" />
-                      <option value="8:00 pm" />
-                      <option value="9:00 pm" />
-                    </datalist>
-                  </fieldset>
-                </FormField>
+                <InputDates />
               </FormSection>
               <FormSection>
                 <h2>Accommmodation Info</h2>

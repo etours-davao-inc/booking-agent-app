@@ -13,4 +13,4 @@ There are two use cases where the booking app will be used and these are:
 * If a Reservation has already been booked, a status notification of BOOKED is seen with the booking ID and link to the Booking page
 
 ## To do
-[] Add Payment Details
+- [ ] Add Payment Details

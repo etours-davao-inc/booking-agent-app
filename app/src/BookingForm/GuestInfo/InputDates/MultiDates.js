@@ -8,17 +8,19 @@ export default () => (
   <React.Fragment>
     <FormField>
       <label htmlFor="">Arrival Date: </label>
-      <fieldset className="pure-group">
-        <DayPickerInput />
-        <input id="from_flight_no" type="text" name="from_flight_no" placeholder="Flight Number" />
-      </fieldset>
+      <DayPickerInput />
+    </FormField>
+    <FormField>
+      <label htmlFor="">Flight number: </label>
+      <input id="from_flight_no" type="text" name="from_flight_no" placeholder="Flight Number" />
     </FormField>
     <FormField>
       <label htmlFor="">Departurn Date: </label>
-      <fieldset className="pure-group">
-        <DayPickerInput />
-        <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Flight Number" />
-      </fieldset>
+      <DayPickerInput />
+    </FormField>
+    <FormField>
+      <label htmlFor="">Flight number: </label>
+      <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Flight Number" />
     </FormField>
   </React.Fragment>
 )

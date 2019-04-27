@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ItineraryBuilder from './editor';
+import ItineraryEditor from './ItineraryEditor';
 
 const FormStyle = styled.form`
   max-width: 1200px;

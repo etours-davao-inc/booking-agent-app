@@ -9,7 +9,7 @@ const EditorStyleWrapper = styled.span`
   }
 `
 
-export default class ItineraryBuilder extends React.Component {
+export default class ItineraryEditor extends React.Component {
   state = {
     value: RichTextEditor.createEmptyValue()
   }

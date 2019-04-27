@@ -1,4 +1,4 @@
-# Etours Booking Agent Side App
+# Etours Booking Agent App
 
 This is the agent dashboard user interface for booking related activities.
 

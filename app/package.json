@@ -5,6 +5,7 @@
   "dependencies": {
     "firebase": "^5.10.1",
     "react": "^16.8.6",
+    "react-day-picker": "^7.3.0",
     "react-dom": "^16.8.6",
     "react-rte": "^0.16.1",
     "react-scripts": "3.0.0",

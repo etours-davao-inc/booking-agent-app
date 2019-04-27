@@ -2,19 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FormStyle = styled.form`
-  width: 960px;
+  /* width: 95%; */
+  max-width: 1366px;
   margin: 0 auto;
-  /* display: grid;
-  grid-template-areas: "header header"
-                       "contact .";
-  h1 {
-    text-align: center;
-    grid-area: header;
-  }
-
-  #contact-info {
-    grid-area: contact;
-  } */
+  background-color: white;
+  border-radius: 2px;
+  padding: 1rem;
 `
 const FormField = styled.div`
   display: grid;

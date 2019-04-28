@@ -49,13 +49,6 @@ export default () => {
               </FormSection>
               <GuestInfo />
               <FormSection>
-                <h2>Airport Pickup</h2>
-                <FormField>
-                  <label htmlFor="with_airport_pickup">With Airport Pickup</label>
-                  <input type="checkbox" name="with_airport_pickup" />
-                </FormField>
-              </FormSection>
-              <FormSection>
                 <h2>Tourguide</h2>
                 <select id="tourguide">
                   <option>Sam</option>

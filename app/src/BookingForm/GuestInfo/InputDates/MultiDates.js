@@ -22,5 +22,9 @@ export default () => (
       <label htmlFor="">Flight number: </label>
       <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Departure Flight No" />
     </FormField>
+    <FormField>
+      <label htmlFor="with_airport_pickup">Airport Pickup</label>
+      <input type="checkbox" name="with_airport_pickup" />
+    </FormField>
   </React.Fragment>
 )

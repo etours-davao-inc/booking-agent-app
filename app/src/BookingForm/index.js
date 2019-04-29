@@ -8,7 +8,8 @@ import { FormField, FormSection } from './Styled';
 import GuestInfo from './GuestInfo';
 
 const FormStyle = styled.form`
-  max-width: 1200px;
+  max-width: 1280px;
+  box-sizing: border-box;
   margin: 0 auto;
   background-color: white;
   border-radius: 2px;

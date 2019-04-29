@@ -14,3 +14,4 @@ There are two use cases where the booking app will be used and these are:
 
 ## To do
 - [ ] Add Payment Details
+- [ ] Create separate sections per day with the intention to get separate data for each day

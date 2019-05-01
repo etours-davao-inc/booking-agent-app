@@ -27,5 +27,3 @@ export class BookingProvider extends Component {
     )
   }
 }
-
-export const BookingConsumer = BookingContext.Consumer;

@@ -1,23 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import TourDateTime from './TourDateTime';
 import MultiDates from './MultiDates';
 
-import { BookingConsumer } from '../../context';
+import { BookingContext } from '../../context';
 
 export default () => {
-  return (
-    <BookingConsumer>
-      {({ data }) => {
-        switch (data.type) {
-          case "daytour":
-            return <TourDateTime />
-          case "multiday":
-            return <MultiDates />
-          default:
-            return <TourDateTime />
-        }
-      }}
-    </BookingConsumer>
-  )
+  const { data, actions } = useContext(BookingContext);
+  switch (data.type) {
+    case "daytour":
+      return <TourDateTime />
+    case "multiday":
+      return <MultiDates />
+    default:
+      return <TourDateTime />
+  }
 }

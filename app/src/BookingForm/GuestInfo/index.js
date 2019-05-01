@@ -1,12 +1,9 @@
 import React, { useContext } from 'react';
 import InputDates from './InputDates';
-import Accommodation from './Accommodation';
 
 import { BookingContext } from '../context';
 
 import { Grid4 } from '../Styled';
-
-
 
 export default () => {
   const { data, actions } = useContext(BookingContext);
@@ -31,7 +28,7 @@ export default () => {
         </div>
       </Grid4>
       <InputDates />
-      <Accommodation />
+
     </React.Fragment>
 
   )

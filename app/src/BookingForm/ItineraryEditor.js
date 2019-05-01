@@ -4,8 +4,7 @@ import styled from 'styled-components';
 
 const EditorStyleWrapper = styled.span`
   .RichTextEditor__root___2QXK- {
-    min-width: 960px;
-    min-height: 800px;
+    min-height: 400px;
   }
 `
 

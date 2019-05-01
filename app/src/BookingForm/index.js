@@ -1,20 +1,10 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
-import ItineraryEditor from './ItineraryEditor';
 
 import { BookingContext } from './context';
-import { Grid4 } from './Styled';
+import { Grid4, FormStyle } from './Styled';
 
 import GuestInfo from './GuestInfo';
-
-const FormStyle = styled.form`
-  max-width: 1280px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 2px;
-  padding: 1rem;
-`
+import Activities from './Activities';
 
 export default () => {
   const { data, actions } = useContext(BookingContext);
@@ -42,22 +32,12 @@ export default () => {
           </div>
         </Grid4>
         <GuestInfo />
-        <label htmlFor="type">Tourguide</label>
-        <select id="tourguide">
-          <option>Sam</option>
-          <option>Jojo</option>
-          <option>Milber</option>
-          <option>Shagay</option>
-        </select>
-        <label htmlFor="vehicle_operator">Operator: </label>
-        <input id="vehicle_operator" type="text" name="vehicle_operator" />
-        <label htmlFor="">Vehicle: </label>
-        <input id="vehicle_operator" type="text" name="vehicle_operator" placeholder="Type" />
-        <input id="vehicle_plate_no" type="text" name="vehicle_plate_no" placeholder="Plate Number" />
-        <label htmlFor="">Driver: </label>
-        <input id="vehicle_driver" type="text" name="vehicle_driver" placeholder="Name" />
-        <input id="vehicle_contact" type="text" name="vehicle_contact" placeholder="Contact" />
-        <ItineraryEditor />
+        {/* To do: Implement Day */}
+        <div>
+            <label htmlFor="days">No of Days </label>
+            <input id="days" type="number" name="days" value={data.days} onChange={e => actions.onInputChange(e)}/>
+          </div>
+        <Activities />
       </fieldset>
     </FormStyle>
   )

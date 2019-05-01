@@ -6,11 +6,16 @@ export class BookingProvider extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      type: "daytour"
+      type: "daytour",
+      days: ""
     }
   }
 
   onSelectChange(e) {
+    this.setState({[e.target.name]:e.target.value})
+  }
+
+  onInputChange(e) {
     this.setState({[e.target.name]:e.target.value})
   }
   
@@ -19,7 +24,8 @@ export class BookingProvider extends Component {
       <BookingContext.Provider value={{
           data: this.state,
           actions: {
-            onSelectChange: this.onSelectChange.bind(this)
+            onSelectChange: this.onSelectChange.bind(this),
+            onInputChange: this.onInputChange.bind(this)
           }
         }}>
         {this.props.children}

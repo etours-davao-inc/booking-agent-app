@@ -7,7 +7,7 @@ export class BookingProvider extends Component {
     super(props)
     this.state = {
       type: "daytour",
-      days: ""
+      days: 1
     }
   }
 

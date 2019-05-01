@@ -7,6 +7,7 @@ import Transportation from './Transportation';
 
 import Accommodation from '../Activities/Accommodation';
 import Time from './Time';
+import Expenses from './Expenses';
 
 export default ({ day }) => {
   const { data, actions } = useContext(BookingContext);
@@ -18,6 +19,7 @@ export default ({ day }) => {
       <Accommodation />
       <Time />
       <ItineraryEditor />
+      <Expenses />
     </div>
   )
 }

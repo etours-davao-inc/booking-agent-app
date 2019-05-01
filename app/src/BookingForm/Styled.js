@@ -19,11 +19,19 @@ padding: 10px;
 export const Grid4 = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
 `
 
 export const Grid3 = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+`
+
+export const Grid2 = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
 `
 
 export const FormStyle = styled.form`

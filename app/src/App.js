@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import BookingForm from './BookingForm';
 
+import { BookingProvider } from '././BookingForm/context';
+
 const AppStyleWrapper = styled.div`
   @font-face {
     font-family: "Varela" ;
@@ -15,8 +17,11 @@ const AppStyleWrapper = styled.div`
 
 function App() {
   return (
+
     <AppStyleWrapper>
-      <BookingForm />
+      <BookingProvider>
+        <BookingForm />
+      </BookingProvider>
     </AppStyleWrapper>
   );
 }

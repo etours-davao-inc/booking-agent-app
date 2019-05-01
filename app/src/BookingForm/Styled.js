@@ -15,3 +15,8 @@ export const FormField = styled.div`
 export const FormSection = styled.section`
 padding: 10px; 
 `
+
+export const Grid4 = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+`

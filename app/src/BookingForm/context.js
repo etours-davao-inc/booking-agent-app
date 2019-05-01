@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const BookingContext = React.createContext();
+export const BookingContext = React.createContext();
 
 export class BookingProvider extends Component {
   constructor(props) {

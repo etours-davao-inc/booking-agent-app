@@ -9,19 +9,19 @@ export default () => {
   const { data, actions } = useContext(BookingContext);
   return (
     <fieldset>
-      <div>
+      <div className="pure-control-group">
         <label htmlFor="">Arrival Date: </label>
         <DayPickerInput />
       </div>
-      <div>
+      <div className="pure-control-group">
         <label htmlFor="">Flight number: </label>
         <input id="from_flight_no" type="text" name="from_flight_no" placeholder="Arrival Flight No" />
       </div>
-      <div>
+      <div className="pure-control-group">
         <label htmlFor="">Departure Date: </label>
         <DayPickerInput />
       </div>
-      <div>
+      <div className="pure-control-group">
         <label htmlFor="">Flight number: </label>
         <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Departure Flight No" />
       </div>

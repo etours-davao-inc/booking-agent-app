@@ -5,7 +5,7 @@ import { Grid2 } from '../Styled';
 import styled from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faPen } from '@fortawesome/free-solid-svg-icons'
 
 const ActivityWrapper = styled.div`
   padding: 15px;
@@ -51,7 +51,6 @@ const Write = () => (
       style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)', cursor:'pointer'}} 
       onClick={() => (console.log('clicked')) }/>
   )
-const Trash = () => (<FontAwesomeIcon icon={faTrash} style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)'}} />)
 
 export default ({ day }) => {
   const { data, actions } = useContext(BookingContext);

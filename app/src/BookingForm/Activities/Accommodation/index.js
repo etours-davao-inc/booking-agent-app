@@ -1,20 +1,26 @@
 import React, { useContext } from 'react';
-import { BookingContext } from '../../context';
+import { Grid3 } from '../Styled';
+import { BookingContext } from '../context';
 
-export default () => {
+export default () => {  
   const { data, actions } = useContext(BookingContext);
-
   return (
-    <React.Fragment>
+    <Grid3>
       <div>
-        <p>Accommodation <small><a href="#" onClick={console.log('im clicked')}>Add Accommodation</a></small></p>
-        <div style={{ padding: '5px', border: '1px solid #3c6382', fontSize:'14px' }}>
-          <p>Hotel: Marco Polo Hotel</p>
-          <p>Type: Etours Account </p>
-          <p>Reservation num: 12345 </p>
-          <a href="#">Delete</a>
-        </div>
+        <label htmlFor="hotel">Hotel: </label>
+        <input id="hotel" type="text" name="hotel" />
       </div>
-    </React.Fragment>
+      <div>
+        <label htmlFor="hotel_reservation_number">Reservation number</label>
+        <input id="hotel_reservation_number" type="text" name="hotel_reservation_number" />
+      </div>
+      <div>
+        <label htmlFor="">Reservation Type</label>
+        <select id="booking-type" style={{width: '187px'}}>
+          <option>Etours Account</option>
+          <option>Guest Account</option>
+        </select>
+      </div>
+    </Grid3>
   )
 }

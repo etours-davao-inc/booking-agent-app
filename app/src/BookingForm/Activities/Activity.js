@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BookingContext } from '../context';
 import { Grid2 } from '../Styled';
 
@@ -6,6 +6,8 @@ import styled from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
+
+import Modal from '../Modal';
 
 const ActivityWrapper = styled.div`
   padding: 15px;
@@ -45,20 +47,22 @@ const ActivityWrapper = styled.div`
   }
 `
 
-const Write = () => (
+const Write = (props) => (
     <FontAwesomeIcon 
       icon={faPen} 
       style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)', cursor:'pointer'}} 
-      onClick={() => (console.log('clicked')) }/>
+      onClick={() => props.onWriteClick() }/>
   )
 
 export default ({ day }) => {
   const { data, actions } = useContext(BookingContext);
+  const [modalDisplay, updateModal] = useState(false);
   return (
     <ActivityWrapper>
+      <Modal display={modalDisplay} closeModal={() => updateModal(false)}/>
       <h2>Day {day + 1}</h2>
       <section>
-        <h3>Itinerary <Write /></h3>
+        <h3>Itinerary <Write onWriteClick={() => updateModal(true)} /></h3>
         <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
           <p>Start: 1:00 PM - Pickup at Airport</p>
           <div>

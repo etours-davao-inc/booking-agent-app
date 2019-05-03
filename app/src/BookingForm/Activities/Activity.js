@@ -45,7 +45,12 @@ const ActivityWrapper = styled.div`
   }
 `
 
-const Write = () => (<FontAwesomeIcon icon={faPen} style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)'}} />)
+const Write = () => (
+    <FontAwesomeIcon 
+      icon={faPen} 
+      style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)', cursor:'pointer'}} 
+      onClick={() => (console.log('clicked')) }/>
+  )
 const Trash = () => (<FontAwesomeIcon icon={faTrash} style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)'}} />)
 
 export default ({ day }) => {
@@ -86,6 +91,7 @@ export default ({ day }) => {
           <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
             <h4>Marco Polo Hotel</h4>
             <p>Reservation number: 12345 on Etours Account</p>
+
           </div>
         </Grid2>
       </section>

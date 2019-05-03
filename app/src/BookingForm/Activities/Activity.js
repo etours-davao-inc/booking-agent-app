@@ -4,6 +4,9 @@ import { Grid2 } from '../Styled';
 
 import styled from 'styled-components';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
+
 const ActivityWrapper = styled.div`
   padding: 15px;
   border: 1px solid #3c6382;
@@ -40,8 +43,10 @@ const ActivityWrapper = styled.div`
   h3 {
     margin: 8px 0;
   }
-
 `
+
+const Write = () => (<FontAwesomeIcon icon={faPen} style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)'}} />)
+const Trash = () => (<FontAwesomeIcon icon={faTrash} style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)'}} />)
 
 export default ({ day }) => {
   const { data, actions } = useContext(BookingContext);
@@ -49,7 +54,7 @@ export default ({ day }) => {
     <ActivityWrapper>
       <h2>Day {day + 1}</h2>
       <section>
-        <h3>Itinerary <small><a href="#" onClick={console.log('im clicked')}>Add Itinerary</a></small></h3>
+        <h3>Itinerary <Write /></h3>
         <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
           <p>Start: 1:00 PM - Pickup at Airport</p>
           <div>
@@ -65,29 +70,27 @@ export default ({ day }) => {
         </div>
       </section>
       <section>
-        <h3>Transportation <small><a href="#" onClick={console.log('im clicked')}>Add Transportation</a></small></h3>
+        <h3>Transportation <Write /></h3>
         <Grid2>
           <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
             <h4>Van - LXC 201</h4>
             <p>Operator: Holiday </p>
             <p>Driver: Tom - 09177011882</p>
             <p>Tourguide: Mik - 09177011882</p>
-            <a href="#">Delete</a>
           </div>
         </Grid2>
       </section>
       <section>
-        <h3>Accommodation <small><a href="#" onClick={console.log('im clicked')}>Add Accommodation</a></small></h3>
+        <h3>Accommodation <Write /></h3>
         <Grid2>
           <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
             <h4>Marco Polo Hotel</h4>
             <p>Reservation number: 12345 on Etours Account</p>
-            <a href="#">Delete</a>
           </div>
         </Grid2>
       </section>
       <section>
-        <h3>Expenses <small><a href="#" onClick={console.log('im clicked')}>Add/Edit</a></small></h3>
+        <h3>Expenses <Write /></h3>
         <ul style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
           <li>Crocodile park - P100 </li>
           <li>Crocodile park - P100</li>

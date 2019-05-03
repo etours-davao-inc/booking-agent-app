@@ -23,9 +23,9 @@ export const Grid4 = styled.section`
 `
 
 export const Grid3 = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 5px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 35px;
 `
 
 export const Grid2 = styled.section`

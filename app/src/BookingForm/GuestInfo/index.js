@@ -9,7 +9,7 @@ export default () => {
   const { data, actions } = useContext(BookingContext);
   return (
     <React.Fragment>
-      <Grid4>
+      <fieldset>
         <div>
           <label htmlFor="adults">Number of Adults: </label>
           <input id="adults" type="number" name="adults" style={{ width: '75px' }} />
@@ -26,9 +26,8 @@ export default () => {
           <label htmlFor="kid611">Number of kids (6-11): </label>
           <input id="kid611" type="number" name="kid611" style={{ width: '75px' }} />
         </div>
-      </Grid4>
+      </fieldset>
       <InputDates />
-
     </React.Fragment>
 
   )

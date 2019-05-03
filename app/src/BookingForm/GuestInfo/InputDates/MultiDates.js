@@ -8,7 +8,7 @@ import { BookingContext } from '../../context';
 export default () => {
   const { data, actions } = useContext(BookingContext);
   return (
-    <Grid4>
+    <fieldset>
       <div>
         <label htmlFor="">Arrival Date: </label>
         <DayPickerInput />
@@ -25,6 +25,6 @@ export default () => {
         <label htmlFor="">Flight number: </label>
         <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Departure Flight No" />
       </div>
-    </Grid4>
+    </fieldset>
   )
 }

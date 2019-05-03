@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import { BookingContext } from '../context';
 
-import ItineraryEditor from '../ItineraryEditor';
+import Itinerary from './Itinerary';
 
 import Transportation from './Transportation';
 
 import Accommodation from '../Activities/Accommodation';
-import Time from './Time';
 import Expenses from './Expenses';
 
 export default ({ day }) => {
@@ -14,10 +13,10 @@ export default ({ day }) => {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}>Day {day + 1}</h2>
+      <Itinerary />
       <Transportation />
       <Accommodation />
-      <Time />
-      <ItineraryEditor />
+
       <Expenses />
     </div>
   )

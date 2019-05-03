@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { BookingContext } from '../context';
-import { Grid3 } from '../Styled';
+import { BookingContext } from '../../context';
+import { Grid3 } from '../../Styled';
 
 export default () => {
   const { data, actions } = useContext(BookingContext);

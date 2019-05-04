@@ -9,12 +9,26 @@ export class BookingProvider extends Component {
       openModal: false,
       module: "",
       type: "daytour",
-      days: 1
+      days: 0
+    }
+  }
+
+  componentDidMount() {
+    let days = this.assignDayValue(this.state.type)
+    this.setState({days: days})
+  }
+
+  assignDayValue(type) {
+    if (type === "daytour") {
+      return 1
+    } else {
+      return 0
     }
   }
 
   onSelectChange(e) {
-    this.setState({[e.target.name]:e.target.value})
+    let days = this.assignDayValue(e.target.value)
+    this.setState({[e.target.name]:e.target.value, days: days})
   }
 
   onInputChange(e) {

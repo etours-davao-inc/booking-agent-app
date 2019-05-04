@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import TourDateTime from './TourDateTime';
 import MultiDates from './MultiDates';
 
-import { BookingContext } from '../../context';
+import { BookingContext } from '../context';
 
 export default () => {
   const { data, actions } = useContext(BookingContext);

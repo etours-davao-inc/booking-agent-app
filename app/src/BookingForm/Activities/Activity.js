@@ -9,6 +9,8 @@ import { faPen } from '@fortawesome/free-solid-svg-icons'
 
 import Modal from '../Modal';
 
+import OpenModal from './OpenModal';
+
 const ActivityWrapper = styled.div`
   padding: 15px;
   border: 1px solid #3c6382;
@@ -51,18 +53,19 @@ const Write = (props) => (
     <FontAwesomeIcon 
       icon={faPen} 
       style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)', cursor:'pointer'}} 
-      onClick={() => props.onWriteClick() }/>
+      onClick={() => props.openModal() }/>
   )
 
 export default ({ day }) => {
   const { data, actions } = useContext(BookingContext);
-  const [modalDisplay, updateModal] = useState(false);
   return (
     <ActivityWrapper>
-      <Modal display={modalDisplay} closeModal={() => updateModal(false)}/>
+      <Modal display={data.openModal} closeModal={() => actions.closeModal(false)}>
+        <OpenModal module={data.module} />
+      </Modal>
       <h2>Day {day + 1}</h2>
       <section>
-        <h3>Itinerary <Write onWriteClick={() => updateModal(true)} /></h3>
+        <h3>Itinerary <Write openModal={() => actions.openModal('itinerary')} /></h3>
         <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
           <p>Start: 1:00 PM - Pickup at Airport</p>
           <div>
@@ -78,7 +81,7 @@ export default ({ day }) => {
         </div>
       </section>
       <section>
-        <h3>Transportation <Write /></h3>
+        <h3>Transportation <Write openModal={() => actions.openModal('transportation')} /></h3>
         <Grid2>
           <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
             <h4>Van - LXC 201</h4>
@@ -89,7 +92,7 @@ export default ({ day }) => {
         </Grid2>
       </section>
       <section>
-        <h3>Accommodation <Write /></h3>
+        <h3>Accommodation <Write openModal={() => actions.openModal('accommodation')} /></h3>
         <Grid2>
           <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
             <h4>Marco Polo Hotel</h4>
@@ -99,7 +102,7 @@ export default ({ day }) => {
         </Grid2>
       </section>
       <section>
-        <h3>Expenses <Write /></h3>
+        <h3>Expenses <Write openModal={() => actions.openModal('expenses')} /></h3>
         <ul style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
           <li>Crocodile park - P100 </li>
           <li>Crocodile park - P100</li>

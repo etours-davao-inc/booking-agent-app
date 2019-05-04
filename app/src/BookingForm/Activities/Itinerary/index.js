@@ -4,8 +4,10 @@ import styled from 'styled-components';
 
 import TimeLoc from './TimeLoc';
 
+import { FormStyle } from '../../Styled';
 
-const EditorStyleWrapper = styled.span`
+const EditorStyleWrapper = styled.div`
+  padding: 0 35px;
   .RichTextEditor__root___2QXK- {
     min-height: 400px;
   }
@@ -30,12 +32,12 @@ export default class ItineraryEditor extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <FormStyle className="pure-form pure-form-aligned">
         <TimeLoc />
         <EditorStyleWrapper>
           <RichTextEditor value={this.state.value} onChange={this.onChange} />
         </EditorStyleWrapper>
-      </React.Fragment>
+      </FormStyle>
     );
   }
 }

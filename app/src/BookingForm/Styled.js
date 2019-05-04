@@ -34,11 +34,15 @@ export const Grid2 = styled.section`
   grid-gap: 5px;
 `
 
-export const FormStyle = styled.form`
-max-width: 1280px;
-box-sizing: border-box;
-margin: 0 auto;
-background-color: white;
-border-radius: 2px;
-padding: 1rem;
+export const FormStyle = styled.div`
+
+`
+
+export const BookingFormWrapper = styled.div`
+  background-color: white;
+  max-width: 1280px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 1rem;
 `

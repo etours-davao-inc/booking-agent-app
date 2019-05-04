@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { Grid3 } from '../Styled';
-import { BookingContext } from '../context';
+import { FormStyle } from '../../Styled';
+import { BookingContext } from '../../context';
 
-export default () => {  
+export default () => {
   const { data, actions } = useContext(BookingContext);
   return (
-    <Grid3>
+    <FormStyle className="pure-form pure-form-aligned">
       <div>
         <label htmlFor="hotel">Hotel: </label>
         <input id="hotel" type="text" name="hotel" />
@@ -16,11 +16,11 @@ export default () => {
       </div>
       <div>
         <label htmlFor="">Reservation Type</label>
-        <select id="booking-type" style={{width: '187px'}}>
+        <select id="booking-type" style={{ width: '187px' }}>
           <option>Etours Account</option>
           <option>Guest Account</option>
         </select>
       </div>
-    </Grid3>
+    </FormStyle>
   )
 }

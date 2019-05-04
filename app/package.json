@@ -12,7 +12,8 @@
     "react-dom": "^16.8.6",
     "react-rte": "^0.16.1",
     "react-scripts": "3.0.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "tour-dates-utility": "/Users/t0mclaudio/Projects/tour-dates-utility"
   },
   "scripts": {
     "start": "react-scripts start",

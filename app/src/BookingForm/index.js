@@ -1,18 +1,20 @@
 import React, { useContext } from 'react';
 
 import { BookingContext } from './context';
-import { Grid3, FormStyle, BookingFormWrapper } from './Styled';
+import { Grid5, FormStyle, BookingFormWrapper } from './Styled';
 
-import GuestInfo from './GuestInfo';
+import NumPax from './NumPax';
 import Activities from './Activities';
 import InputDates from './InputDates';
+import Price from './Price';
+import Total from './Price/total';
 
 export default () => {
   const { data, actions } = useContext(BookingContext);
   return (
     <BookingFormWrapper>
       <h1>Booking Form {data.type}</h1>
-      <FormStyle className="pure-form pure-form-aligned">
+      <FormStyle className="pure-form pure-form-stacked">
         <div className="pure-control-group">
           <label htmlFor="type">Booking Type</label>
           <select id="type" name="type" onChange={e => actions.onSelectChange(e)}>
@@ -21,8 +23,8 @@ export default () => {
           </select>
         </div>
       </FormStyle>
-      <FormStyle className="pure-form pure-form-aligned">
-        <Grid3>
+      <FormStyle className="pure-form pure-form-stacked">
+        <Grid5>
           <fieldset>
             <div className="pure-control-group">
               <label htmlFor="name">Name: </label>
@@ -37,9 +39,11 @@ export default () => {
               <input id="email" type="email" name="email" size={30} />
             </div>
           </fieldset>
-          <GuestInfo />
+          <NumPax />
+          <Price />
+          <Total />
           <InputDates />
-        </Grid3>
+        </Grid5>
       </FormStyle>
       <div>
         <label htmlFor="days">No of Days </label>

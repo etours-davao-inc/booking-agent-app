@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
+
 import 'react-day-picker/lib/style.css';
 
 import { BookingContext } from '../context';
@@ -10,7 +11,8 @@ export default () => {
     <fieldset>
       <div className="pure-control-group">
         <label htmlFor="">Arrival Date: </label>
-        <DayPickerInput />
+        <DayPickerInput 
+          onDayChange={date => actions.onDatesChange(date, 'from')} />
       </div>
       <div className="pure-control-group">
         <label htmlFor="">Flight number: </label>
@@ -18,7 +20,8 @@ export default () => {
       </div>
       <div className="pure-control-group">
         <label htmlFor="">Departure Date: </label>
-        <DayPickerInput />
+        <DayPickerInput 
+          onDayChange={date => actions.onDatesChange(date, 'to')} />
       </div>
       <div className="pure-control-group">
         <label htmlFor="">Flight number: </label>

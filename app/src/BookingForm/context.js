@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getDays } from 'tour-dates-utility';
 
 export const BookingContext = React.createContext();
 
@@ -34,6 +35,32 @@ export class BookingProvider extends Component {
   onInputChange(e) {
     this.setState({[e.target.name]:e.target.value})
   }
+
+  onDatesChange(day, type) {
+    let from = this.state.from
+    let to = this.state.to
+    let days;
+    let isWithinAcceptableDays;
+    if (type === 'from' && !isNaN(to)) {
+      days = getDays(day, to)
+      isWithinAcceptableDays = days >= 2 && days <= 30
+      if (isWithinAcceptableDays) {
+        this.setState({from: day, days: days})
+      } else {
+        this.setState({[type]: day, days: 0 })
+      }
+    } else if (type === 'to' && !isNaN(from)) {
+      days = getDays(from, day)
+      isWithinAcceptableDays = days >= 2 && days <= 30
+      if (isWithinAcceptableDays) {
+        this.setState({to: day, days: days})
+      } else {
+        this.setState({[type]: day, days: 0 })
+      }
+    } else {
+      this.setState({[type]: day, days: 0 })
+    }  
+  }
   
   openModal(mod) {
     console.log("I was opened")
@@ -54,6 +81,7 @@ export class BookingProvider extends Component {
             onInputChange: this.onInputChange.bind(this),
             openModal: this.openModal.bind(this),
             closeModal: this.closeModal.bind(this),
+            onDatesChange: this.onDatesChange.bind(this)
           }
         }}>
         {this.props.children}

@@ -7951,6 +7951,9 @@ pretty-format@^24.7.0:
     ansi-styles "^3.2.0"
     react-is "^16.8.4"
 
+price-compute-js@/Users/t0mclaudio/Projects/total-price-calculator:
+  version "1.0.0"
+
 private@^0.1.6:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
@@ -9576,7 +9579,7 @@ tough-cookie@~2.4.3:
     psl "^1.1.24"
     punycode "^1.4.1"
 
-tour-dates-utility@/Users/t0mclaudio/Projects/tour-dates-utility:
+"tour-dates-utility@file:../../tour-dates-utility":
   version "0.1.0"
   dependencies:
     date-fns "^1.30.1"

@@ -7,10 +7,21 @@ import NumPax from './NumPax';
 import Activities from './Activities';
 import InputDates from './InputDates';
 import Price from './Price';
-import Total from './Price/total';
+import Computation from './Computation';
+
+import styled from 'styled-components';
+
+import { format } from 'date-fns'
+
+const GeneratedInfoWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+`
 
 export default () => {
   const { data, actions } = useContext(BookingContext);
+  const inquiryDate = format(data.userInput.inquiryDate, 'MMMM DD, YYYY')
   return (
     <BookingFormWrapper>
       <h1>Booking Form {data.type}</h1>
@@ -27,29 +38,31 @@ export default () => {
         <Grid5>
           <fieldset>
             <div className="pure-control-group">
+              <label htmlFor="inquiryDate">Inquiry Date: </label>
+              <input id="inquiryDate" type="text" name="inquiryDate" value={inquiryDate} size={30} readonly />
+            </div>
+            <div className="pure-control-group">
               <label htmlFor="name">Name: </label>
-              <input id="name" type="text" name="name" size={30} />
+              <input id="name" type="text" name="name" value={data.userInput.name} onChange={e => actions.onUserInputChange(e)} size={30} />
             </div>
             <div className="pure-control-group">
               <label htmlFor="contact">Contact No: </label>
-              <input id="contact" type="tel" name="contact" size={30} />
+              <input id="contact" type="tel" name="contact" value={data.userInput.contact} onChange={e => actions.onUserInputChange(e)} size={30} />
             </div>
             <div className="pure-control-group">
               <label htmlFor="email">Email: </label>
-              <input id="email" type="email" name="email" size={30} />
+              <input id="email" type="email" name="email" value={data.userInput.email} onChange={e => actions.onUserInputChange(e)} size={30} />
             </div>
           </fieldset>
           <NumPax />
           <Price />
-          <Total />
           <InputDates />
         </Grid5>
       </FormStyle>
-      <div>
-        <label htmlFor="days">No of Days </label>
-        <input id="days" type="number" name="days" value={data.days} onChange={e => actions.onInputChange(e)} />
-      </div>
-      <Activities />
+      <GeneratedInfoWrapper>
+        <Computation />
+        <Activities />
+      </GeneratedInfoWrapper>
     </BookingFormWrapper>
   )
 }

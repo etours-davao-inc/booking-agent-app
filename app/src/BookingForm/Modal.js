@@ -3,15 +3,6 @@ import Portal from './Portal';
 
 import styled from 'styled-components';
 
-const MobileButton = styled.button`
-  background-color: #2ecc71;
-  color: white;
-  height: 45px;
-  font-size: 18px;
-  width: 100%;
-  border: none;
-`
-
 const ModalWrapper = styled.div`
   background-color: rgba(45, 52, 54,.7);
   position: fixed;
@@ -25,8 +16,8 @@ const ModalWrapper = styled.div`
 
 const ModalBodyWrapper = styled.div`
   background-color: white;
-  width: 1200px;
-  height: 850px;
+  width: 720px;
+  height: 750px;
   z-index: 999;
   box-sizing: border-box;
   border: 1px solid gray;
@@ -42,7 +33,7 @@ export default (props) => {
         <ModalWrapper>
           <ModalBodyWrapper>
             <div id="modalBody">
-              <span id="closePortalBtn" onClick={() => props.closeModal()}>close [x]</span>
+              <div id="closePortalBtn" onClick={() => props.closeModal()}>close [x]</div>
               {props.children}
             </div>
           </ModalBodyWrapper>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { getDays } from 'tour-dates-utility';
 
+import { Calculate } from 'price-compute-js';
+
 export const BookingContext = React.createContext();
 
 export class BookingProvider extends Component {
@@ -10,7 +12,35 @@ export class BookingProvider extends Component {
       openModal: false,
       module: "",
       type: "daytour",
-      days: 0
+      days: 0,
+      userInput: {
+        inquiryDate: new Date(),
+        adults: [0, 0],
+        kid02: [0, 0],
+        kid35: [0, 0],
+        kid611: [0, 0],
+        name: "",
+        email: "",
+        contact: "",
+        remarks: ""        
+      },
+      calculations: {
+        item: {
+          adults: 0,
+          kid02: 0,
+          kid35: 0,
+          kid611: 0
+        },
+        total: {
+          adults: 0,
+          kid02: 0,
+          kid35: 0,
+          kid611: 0,
+          total: 0,
+          downpayment: 0,
+          balance: 0  
+        }
+      }
     }
   }
 
@@ -32,8 +62,10 @@ export class BookingProvider extends Component {
     this.setState({[e.target.name]:e.target.value, days: days})
   }
 
-  onInputChange(e) {
-    this.setState({[e.target.name]:e.target.value})
+  onUserInputChange(e) {
+    let userInput = this.state.userInput;
+    userInput[e.target.name] = e.target.value;
+    this.setState({userInput:userInput})
   }
 
   onDatesChange(day, type) {
@@ -72,16 +104,32 @@ export class BookingProvider extends Component {
     this.setState({openModal:false})
   }
 
+  onPaxChange(e) {
+    let input = this.state.userInput
+    input[e.target.name][0] = parseInt(e.target.value)
+    let calculations = Calculate(input)
+    this.setState({userInput:input, calculations:calculations})
+  }
+
+  onPriceChange(e) {
+    let input = this.state.userInput
+    input[e.target.name][1] = parseFloat(e.target.value)
+    let calculations = Calculate(input)
+    this.setState({userInput:input, calculations:calculations})
+  }
+
   render() {
     return (
       <BookingContext.Provider value={{
           data: this.state,
           actions: {
             onSelectChange: this.onSelectChange.bind(this),
-            onInputChange: this.onInputChange.bind(this),
+            onUserInputChange: this.onUserInputChange.bind(this),
             openModal: this.openModal.bind(this),
             closeModal: this.closeModal.bind(this),
-            onDatesChange: this.onDatesChange.bind(this)
+            onDatesChange: this.onDatesChange.bind(this),
+            onPaxChange: this.onPaxChange.bind(this),
+            onPriceChange: this.onPriceChange.bind(this)
           }
         }}>
         {this.props.children}

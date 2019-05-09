@@ -6,9 +6,9 @@ import styled from 'styled-components';
 import { BookingContext } from '../context';
 
 const ComputationWrapper = styled.section`
-  padding: 15px;
+  padding: 10px;
   border: 1px solid #3c6382;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 2px;
 
   #summary_wrapper {
@@ -27,9 +27,13 @@ const ComputationWrapper = styled.section`
     border-bottom: 1px dashed rgba(60, 99, 130, 0.3);
   }
 
+  .computationGrid:last-child {
+    border-bottom: none;
+  }
+
   .computationGrid p {
-    padding: 2px;
-    margin: 10px;
+    padding: 5px;
+    margin: 0;
   }
 
   .computationGrid p:nth-child(3) {

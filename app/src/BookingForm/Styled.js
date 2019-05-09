@@ -31,7 +31,7 @@ export const Grid5 = styled.section`
 export const Grid3 = styled.section`
   display: inline-grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 35px;
+  grid-gap: 15px;
 `
 
 export const Grid2 = styled.section`
@@ -51,4 +51,12 @@ export const BookingFormWrapper = styled.div`
   margin: 0 auto;
   border-radius: 2px;
   padding: 1rem;
+`
+
+export const FormBodyWrapper = styled.div`
+  padding: 0 35px 35px 35px;
+
+  h2 {
+    margin: 0 0 35px 0;
+  }
 `

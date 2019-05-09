@@ -16,13 +16,19 @@ const ModalWrapper = styled.div`
 
 const ModalBodyWrapper = styled.div`
   background-color: white;
-  width: 720px;
-  height: 750px;
+  max-width: 720px;
   z-index: 999;
   box-sizing: border-box;
   border: 1px solid gray;
   margin: 15px auto;
   border-radius: 2px;
+
+  #closePortalBtn {
+    text-align: right;
+    font-size: 16px;
+    padding: 10px;
+    color: silver;
+  }
 `
 
 export default (props) => {

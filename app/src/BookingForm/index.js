@@ -126,16 +126,31 @@ export default () => {
           <label htmlFor="kid611price">Kid(6-11) Price</label>
           <input id="kid611price" type="number" step="any" value={price.kid611[1]} name="kid611" onChange={e => actions.onPriceChange(e)} />
         </PriceGrid>
-        <DateGrid>
-          <label htmlFor="">Arrival Date: </label>
-          <DayPickerInput onDayChange={date => actions.onDatesChange(date, 'from')} />
-          <label htmlFor="">Flight number: </label>
-          <input id="from_flight_no" type="text" name="from_flight_no" placeholder="Arrival Flight No" />
-          <label htmlFor="">Departure Date: </label>
-          <DayPickerInput onDayChange={date => actions.onDatesChange(date, 'to')} />
-          <label htmlFor="">Flight number: </label>
-          <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Departure Flight No" />
-        </DateGrid>
+        { data.type == "multiday" ?
+          <DateGrid>
+            <label htmlFor="">Arrival Date: </label>
+            <DayPickerInput onDayChange={date => actions.onDatesChange(date, 'from')} />
+            <label htmlFor="">Flight number: </label>
+            <input id="from_flight_no" type="text" name="from_flight_no" placeholder="Arrival Flight No" />
+            <label htmlFor="">Departure Date: </label>
+            <DayPickerInput onDayChange={date => actions.onDatesChange(date, 'to')} />
+            <label htmlFor="">Flight number: </label>
+            <input id="to_flight_no" type="text" name="to_flight_no" placeholder="Departure Flight No" />
+          </DateGrid>
+        : 
+          <DateGrid>
+            <label htmlFor="">Tour date: </label>
+            <DayPickerInput onDayChange={date => actions.onDateChange(date)} />
+            <label htmlFor="">Flight number: </label>
+            <input id="from_flight_no" type="text" name="from_flight_no" placeholder="Arrival Flight No" />
+            <label style={{height:'38px', padding:0}}></label>
+            <input readOnly={true} />
+            <label style={{height:'38px', padding:0}}></label>
+            <input readOnly={true} />
+          </DateGrid>        
+        
+        
+        }  
       </FormGridWrapper>
       <GeneratedInfoWrapper>
         <Computation />

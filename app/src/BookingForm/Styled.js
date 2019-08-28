@@ -40,7 +40,7 @@ export const Grid2 = styled.section`
   grid-gap: 5px;
 `
 
-export const FormStyle = styled.div`
+export const FormStyle = styled.form`
 
 `
 

@@ -4,12 +4,55 @@ import { Grid2 } from '../Styled';
 
 import styled from 'styled-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen } from '@fortawesome/free-solid-svg-icons'
-
 import Modal from '../Modal';
 
-import OpenModal from './OpenModal';
+import Itinerary from './Itinerary';
+
+import Write from '../Write';
+
+export default ({ day }) => {
+  const { data, actions } = useContext(BookingContext);
+  return (
+    <ActivityWrapper>
+      <h2>{data.type == "daytour" ? data.tourDate : `Day ${day + 1}` }</h2>
+      <Itinerary day={day} />
+      <section>
+        <h3>Transportation <Write openModal={() => actions.openModal('transportation')} /></h3>
+        <Grid2>
+          <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
+            <h4>Van - LXC 201</h4>
+            <p>Operator: Holiday </p>
+            <p>Driver: Tom - 09177011882</p>
+            <p>Tourguide: Mik - 09177011882</p>
+          </div>
+        </Grid2>
+      </section>
+      <section>
+        <h3>Accommodation <Write openModal={() => actions.openModal('accommodation')} /></h3>
+        <Grid2>
+          <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
+            <h4>Marco Polo Hotel</h4>
+            <p>Reservation number: 12345 on Etours Account</p>
+
+          </div>
+        </Grid2>
+      </section>
+      <section>
+        <h3>Expenses <Write openModal={() => actions.openModal('expenses')} /></h3>
+        <ul style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
+          <li>Crocodile park - P100 </li>
+          <li>Crocodile park - P100</li>
+          <li>Crocodile park - P100</li>
+          <li>Crocodile park - P100</li>
+          <li><strong>Total - P400</strong></li>
+        </ul>
+      </section>
+      <Modal display={data.openModal} closeModal={() => actions.closeModal(false)}>
+        {data.module}
+      </Modal>
+    </ActivityWrapper>
+  )
+}
 
 const ActivityWrapper = styled.div`
   padding: 15px;
@@ -48,69 +91,3 @@ const ActivityWrapper = styled.div`
     margin: 8px 0;
   }
 `
-
-const Write = (props) => (
-    <FontAwesomeIcon 
-      icon={faPen} 
-      style={{fontSize: '14px', color: 'rgba(99, 110, 114,1.0)', cursor:'pointer'}} 
-      onClick={() => props.openModal() }/>
-  )
-
-export default ({ day }) => {
-  const { data, actions } = useContext(BookingContext);
-  return (
-    <ActivityWrapper>
-      <Modal display={data.openModal} closeModal={() => actions.closeModal(false)}>
-        <OpenModal module={data.module} />
-      </Modal>
-      <h2>Day {day + 1}</h2>
-      <section>
-        <h3>Itinerary <Write openModal={() => actions.openModal('itinerary')} /></h3>
-        <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
-          <p>Start: 1:00 PM - Pickup at Airport</p>
-          <div>
-            <ul>
-              <li>Crocodile Park</li>
-              <li>Eden Nature Park</li>
-              <li>Lunch</li>
-              <li>Philippine Eagle</li>
-              <li>Malagos Resort</li>
-            </ul>
-          </div>
-          <p>End: 6:00 PM - Drop off at Hotel</p>
-        </div>
-      </section>
-      <section>
-        <h3>Transportation <Write openModal={() => actions.openModal('transportation')} /></h3>
-        <Grid2>
-          <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
-            <h4>Van - LXC 201</h4>
-            <p>Operator: Holiday </p>
-            <p>Driver: Tom - 09177011882</p>
-            <p>Tourguide: Mik - 09177011882</p>
-          </div>
-        </Grid2>
-      </section>
-      <section>
-        <h3>Accommodation <Write openModal={() => actions.openModal('accommodation')} /></h3>
-        <Grid2>
-          <div style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
-            <h4>Marco Polo Hotel</h4>
-            <p>Reservation number: 12345 on Etours Account</p>
-
-          </div>
-        </Grid2>
-      </section>
-      <section>
-        <h3>Expenses <Write openModal={() => actions.openModal('expenses')} /></h3>
-        <ul style={{ padding: '5px', border: '1px dashed rgba(60, 99, 130,.30)', borderRadius: '2px', fontSize: '14px' }}>
-          <li>Crocodile park - P100 </li>
-          <li>Crocodile park - P100</li>
-          <li>Crocodile park - P100</li>
-          <li>Crocodile park - P100</li>
-          <li><strong>Total - P400</strong></li>
-        </ul>
-      </section>
-    </ActivityWrapper>
-  )
-}

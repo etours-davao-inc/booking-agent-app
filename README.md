@@ -2,7 +2,13 @@
 
 This is the agent dashboard user interface for booking related activities.
 
+## Project Motivation
+* Allows user to create an activity where all specifications required for the activity are specified - this allows information available to other users of the information.
+
 ## Use Case
+
+Main Actor: Booking Agent
+
 There are two use cases where the booking app will be used and these are:
 1. Create a new booking
 2. From Reservations, agent proceeds to booking using the data from the reservation
